@@ -1,0 +1,4 @@
+In this Python script, I have written a code which allows users to enter a city name and retrieve weather information using the Open Weather Map API. I have imported all necessary modules like "os" for system commands and "requests" for HTTP request. Also, I added a While loop that continuously prompts the user to enter a city name until the user types exit. It Clears the screen after each input using os. The system("cls") Checks if the user wants to exit the program by typing 'exit'. If not, it connects a URL to request weather data from the Open Weather Map API for the entered city. If the request is successful, it will extract various weather information such as city name, country, weather type, temperature, and humidity. If the city name is not found, it prints a message indicating it was not found and prompts the user to enter a valid city name. 
+hashtag#OasisInfobyte 
+
+The Code Editor I've Used is : Google Colaboratory
