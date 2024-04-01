@@ -1,0 +1,21 @@
+import os
+import requests
+
+while True:
+    user_input = input("Enter Any City_name: ")
+    os.system("cls")
+    
+    if user_input.lower() == 'exit':
+        print("Exiting the program.")
+        break
+    weather_data = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={user_input}&units=metric&APPID=ea852292d5ebc4f430074425f5cff957")
+
+    if (weather_data.status_code == 200):
+        city_name = weather_data.json()['name']
+        country = weather_data.json()['sys']['country']
+        weather = weather_data.json()['weather'][0]['main']
+        temp = str(weather_data.json()['main']['temp']) +"°C"
+        humidity = str(weather_data.json()["main"]["humidity"]) +"%"
+        print("\nWeather Information for " + city_name + ", " + country + ":\n- Weather Type: " + weather + "\nTemperature: " + str(temp) + "\nHumidity: " + str(humidity) + "")
+    else:
+        print("City not found! Please enter a valid city name\n\n")
